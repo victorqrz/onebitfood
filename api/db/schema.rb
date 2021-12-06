@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 2021_12_06_222613) do
+ActiveRecord::Schema.define(version: 2021_12_06_224117) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -51,18 +51,17 @@ ActiveRecord::Schema.define(version: 2021_12_06_222613) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
-    t.string "description"
-    t.string "text"
+    t.text "description"
     t.float "delivery_tax"
     t.string "city"
     t.string "street"
     t.string "neighborhood"
     t.string "number"
     t.string "complement"
-    t.string "category"
-    t.string "references"
+    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_restaurants_on_category_id"
   end
 
   add_foreign_key "order_products", "orders"
@@ -70,4 +69,5 @@ ActiveRecord::Schema.define(version: 2021_12_06_222613) do
   add_foreign_key "orders", "restaurants"
   add_foreign_key "product_categories", "restaurants"
   add_foreign_key "products", "product_categories"
+  add_foreign_key "restaurants", "categories"
 end

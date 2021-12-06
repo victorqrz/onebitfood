@@ -2,26 +2,22 @@
 
 one:
   name: MyString
-  description: MyString
-  text: MyString
+  description: MyText
   delivery_tax: 1.5
   city: MyString
   street: MyString
   neighborhood: MyString
   number: MyString
   complement: MyString
-  category: MyString
-  references: MyString
+  category: one
 
 two:
   name: MyString
-  description: MyString
-  text: MyString
+  description: MyText
   delivery_tax: 1.5
   city: MyString
   street: MyString
   neighborhood: MyString
   number: MyString
   complement: MyString
-  category: MyString
-  references: MyString
+  category: two
