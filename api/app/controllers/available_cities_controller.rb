@@ -1,7 +1,5 @@
 class AvailableCitiesController < ApplicationController
-  def create
-  end
-
   def index
+    @available_cities = Restaurant.all().map { |r| r.city }.uniq
   end
 end
